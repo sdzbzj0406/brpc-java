@@ -20,12 +20,13 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Map;
 
+import com.baidu.brpc.protocol.standard.Echo;
+import com.baidu.brpc.protocol.standard.EchoService;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import com.baidu.brpc.client.channel.Endpoint;
-import com.baidu.brpc.protocol.standard.Echo;
 import com.baidu.brpc.protocol.standard.EchoService;
 import com.baidu.brpc.protocol.standard.EchoServiceImpl;
 import com.baidu.brpc.RpcOptionsUtils;

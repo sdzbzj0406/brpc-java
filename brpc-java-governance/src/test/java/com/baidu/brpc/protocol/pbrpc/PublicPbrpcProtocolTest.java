@@ -5,8 +5,7 @@ import com.baidu.brpc.protocol.Request;
 import com.baidu.brpc.protocol.RpcRequest;
 import com.baidu.brpc.protocol.RpcResponse;
 import com.baidu.brpc.protocol.nshead.NSHead;
-import com.baidu.brpc.protocol.standard.Echo.EchoRequest;
-import com.baidu.brpc.protocol.standard.Echo.EchoResponse;
+import com.baidu.brpc.protocol.standard.Echo;
 import com.baidu.brpc.server.ServiceManager;
 import io.netty.buffer.ByteBuf;
 import org.junit.Before;
@@ -28,7 +27,7 @@ public class PublicPbrpcProtocolTest {
 
     @Test
     public void testEncodeRequest() throws Exception {
-        EchoRequest request = buildRequest();
+        Echo.EchoRequest request = buildRequest();
 
         RpcRequest rpcRequest = new RpcRequest();
         rpcRequest.setArgs(new Object[] {request});
@@ -47,7 +46,7 @@ public class PublicPbrpcProtocolTest {
     @Test
     public void testEncodeResponse() throws Exception {
 
-        EchoResponse result = buildResponse();
+        Echo.EchoResponse result = buildResponse();
 
         RpcResponse rpcResponse = new RpcResponse();
         rpcResponse.setLogId(4L);
@@ -66,16 +65,16 @@ public class PublicPbrpcProtocolTest {
     }
 
 
-    public EchoRequest buildRequest() {
+    public Echo.EchoRequest buildRequest() {
 
-        EchoRequest.Builder builder = EchoRequest.newBuilder();
+        Echo.EchoRequest.Builder builder = Echo.EchoRequest.newBuilder();
         builder.setMessage("hello world");
         return builder.build();
     }
 
-    public EchoResponse buildResponse() {
+    public Echo.EchoResponse buildResponse() {
 
-        EchoResponse.Builder builder = EchoResponse.newBuilder();
+        Echo.EchoResponse.Builder builder = Echo.EchoResponse.newBuilder();
         builder.setMessage("sync!");
         return builder.build();
 

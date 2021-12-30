@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.lang.reflect.Method;
 
+import com.baidu.brpc.protocol.standard.Echo;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,8 +29,6 @@ import com.baidu.brpc.RpcMethodInfo;
 import com.baidu.brpc.protocol.Request;
 import com.baidu.brpc.protocol.RpcRequest;
 import com.baidu.brpc.protocol.RpcResponse;
-import com.baidu.brpc.protocol.standard.Echo;
-import com.baidu.brpc.protocol.standard.Echo.EchoRequest;
 import com.baidu.brpc.protocol.standard.EchoService;
 import com.baidu.brpc.protocol.standard.EchoServiceImpl;
 import com.baidu.brpc.server.ServiceManager;
@@ -50,7 +49,7 @@ public class NsHeadRpcProtocolProtobufTest {
     @Test
     public void testEncodeRequest() throws Exception {
 
-        EchoRequest request = Echo.EchoRequest.newBuilder().setMessage("hello").build();
+        Echo.EchoRequest request = Echo.EchoRequest.newBuilder().setMessage("hello").build();
 
         RpcRequest rpcRequest = new RpcRequest();
         rpcRequest.setArgs(new Object[] {request});

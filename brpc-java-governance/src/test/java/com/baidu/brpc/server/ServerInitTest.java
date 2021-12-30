@@ -2,14 +2,13 @@ package com.baidu.brpc.server;
 
 import java.util.Map;
 
+import com.baidu.brpc.protocol.standard.Echo;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import com.baidu.brpc.client.BrpcProxy;
 import com.baidu.brpc.client.RpcClient;
-import com.baidu.brpc.protocol.standard.Echo;
-import com.baidu.brpc.protocol.standard.Echo.EchoRequest;
 import com.baidu.brpc.protocol.standard.EchoService;
 import com.baidu.brpc.protocol.standard.EchoServiceImpl;
 import com.baidu.brpc.RpcOptionsUtils;
@@ -34,7 +33,7 @@ public class ServerInitTest {
         RpcClient secondRpcClient = new RpcClient("list://127.0.0.1:8001",
                 RpcOptionsUtils.getRpcClientOptions());
         EchoService echoService = BrpcProxy.getProxy(secondRpcClient, EchoService.class);
-        EchoRequest request = Echo.EchoRequest.newBuilder().setMessage("hello").build();
+        Echo.EchoRequest request = Echo.EchoRequest.newBuilder().setMessage("hello").build();
         echoService.echo(request);
 
         int processor = Runtime.getRuntime().availableProcessors();

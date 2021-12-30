@@ -18,6 +18,7 @@ package com.baidu.brpc.push;
 
 import static org.junit.Assert.assertEquals;
 
+import com.baidu.brpc.protocol.standard.Echo;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,7 +27,6 @@ import com.baidu.brpc.client.BrpcProxy;
 import com.baidu.brpc.client.RpcClient;
 import com.baidu.brpc.client.RpcClientOptions;
 import com.baidu.brpc.protocol.Options;
-import com.baidu.brpc.protocol.standard.Echo;
 import com.baidu.brpc.protocol.standard.EchoService;
 import com.baidu.brpc.protocol.standard.EchoServiceImpl;
 import com.baidu.brpc.push.userservice.PushData;
